@@ -25,7 +25,7 @@ st.divider()
 st.subheader("이미지 생성")
 prompt = st.text_input("이미지 프롬프트를 입력하세요")
 if st.button("이미지 생성") and prompt:
-    with st.spinner("이미지 생성 중... (수십 초 걸릴 수 있음)"):
+    with st.spinner("이미지 생성 중... 시간이 걸릴 수 있습니다."):
         img = client.images.generate(
             model="gpt-image-2.6-flare",
             prompt=prompt,
