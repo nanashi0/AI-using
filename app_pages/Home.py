@@ -30,6 +30,9 @@ if st.button("이미지 생성") and prompt:
             model="gpt-image-2.6-flare",
             prompt=prompt,
         )
-    image_bytes = base64.b64decode(img.data[0].b64_json)
+    st.session_state.image_bytes = base64.b64decode(img.data[0].b64_json)
+
+# 마지막으로 생성한 이미지는 다른 입력으로 다시 실행돼도 화면에 남김
+if "image_bytes" in st.session_state:
     # 메모리 상의 이미지 보여주기
-    st.image(image_bytes)
+    st.image(st.session_state.image_bytes)
