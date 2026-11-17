@@ -4,6 +4,7 @@ import streamlit as st
 client = st.session_state["openai_client"]
 
 st.title("Home")
+st.write("Hello World")  # 실습 2
 
 # 실습 3: 질문 -> gpt-6-luna 응답
 @st.cache_data  # 같은 질문이면 API를 다시 부르지 않고 저장된 결과 반환
